@@ -1,5 +1,5 @@
 // Chakra Icons
-import { BellIcon, SearchIcon } from "@chakra-ui/icons";
+import { BellIcon, SearchIcon, MoonIcon } from "@chakra-ui/icons";
 // Chakra Imports
 import {
   Button,
@@ -13,6 +13,7 @@ import {
   MenuItem,
   MenuList,
   Text,
+  useColorMode,
   useColorModeValue,
 } from "@chakra-ui/react";
 // Assets
@@ -31,6 +32,8 @@ import routes from "routes.js";
 
 export default function HeaderLinks(props) {
   const { variant, children, fixed, secondary, onOpen, ...rest } = props;
+
+  const { colorMode, toggleColorMode } = useColorMode();
 
   // Chakra Color Mode
   let mainTeal = useColorModeValue("teal.300", "teal.300");
@@ -93,6 +96,17 @@ export default function HeaderLinks(props) {
           borderRadius="inherit"
         />
       </InputGroup>
+
+      <MoonIcon
+        cursor="pointer"
+        ms={{ base: "16px", xl: "0px" }}
+        me="16px"
+        ref={settingsRef}
+        onClick={toggleColorMode}
+        color={navbarIcon}
+        w="18px"
+        h="18px"
+      />
       <NavLink to="/auth/signin">
         <Button
           ms="0px"
@@ -124,16 +138,6 @@ export default function HeaderLinks(props) {
         routes={routes}
         // logo={logo}
         {...rest}
-      />
-      <SettingsIcon
-        cursor="pointer"
-        ms={{ base: "16px", xl: "0px" }}
-        me="16px"
-        ref={settingsRef}
-        onClick={props.onOpen}
-        color={navbarIcon}
-        w="18px"
-        h="18px"
       />
       <Menu>
         <MenuButton>

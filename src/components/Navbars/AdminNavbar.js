@@ -7,6 +7,9 @@ import {
   Flex,
   Link,
   useColorModeValue,
+  Button,
+  ButtonGroup,
+  Text
 } from "@chakra-ui/react";
 import PropTypes from "prop-types";
 import React, { useState } from "react";
@@ -113,7 +116,7 @@ export default function AdminNavbar(props) {
         alignItems={{ xl: "center" }}
       >
         <Box mb={{ sm: "8px", md: "0px" }}>
-          <Breadcrumb>
+          {/* <Breadcrumb>
             <BreadcrumbItem color={mainText}>
               <BreadcrumbLink href="#" color={secondaryText}>
                 Pages
@@ -125,13 +128,14 @@ export default function AdminNavbar(props) {
                 {brandText}
               </BreadcrumbLink>
             </BreadcrumbItem>
-          </Breadcrumb>
+          </Breadcrumb> */}
           {/* Here we create navbar brand, based on route name */}
           <Link
             color={mainText}
             href="#"
             bg="inherit"
             borderRadius="inherit"
+            fontSize={{ sm: "1.5rem", md: "1.75rem" }}
             fontWeight="bold"
             _hover={{ color: { mainText } }}
             _active={{
@@ -145,6 +149,11 @@ export default function AdminNavbar(props) {
           >
             {brandText}
           </Link>
+          <ButtonGroup size='md' isAttached variant='outline' sx={{ ml:10 }}>
+            <Button>Daily</Button>
+            <Button>Weekly</Button>
+            <Button>Monthly</Button>
+          </ButtonGroup>
         </Box>
         <Box ms="auto" w={{ sm: "100%", md: "unset" }}>
           <AdminNavbarLinks

@@ -17,7 +17,7 @@ import {
     useDisclosure
 } from "@chakra-ui/react";
 import IconBox from "components/Icons/IconBox";
-import { CreativeTimLogo } from "components/Icons/Icons";
+import katsikatlogo from "assets/img/logo-katsikat.png";
 import { Separator } from "components/Separator/Separator";
 import { SidebarHelp } from "components/Sidebar/SidebarHelp";
 import React from "react";
@@ -201,10 +201,20 @@ function SidebarResponsive(props) {
           alignItems="center"
           fontSize="11px"
         >
-          <CreativeTimLogo w="32px" h="32px" me="10px" />
-          <Text fontSize="sm" mt="3px">
-            {logoText}
-          </Text>
+           <Box
+            display="inline"
+            alignItems="center"
+            justifyContent="center">
+            <img
+              src={katsikatlogo}
+              alt="Katsikat Logo"
+              height={800}
+              width={80}
+            />
+            <Text textAlign="center" fontSize="sm" mt="10px">
+              {logoText}
+            </Text>
+          </Box>
         </Link>
         <Separator></Separator>
       </Box>

@@ -66,6 +66,8 @@ export const ClockIcon = createIcon({
     </g>
   ),
 });
+
+
 export const CreativeTimLogo = createIcon({
   displayName: "CreativeTimLogo",
   viewBox: "0 0 100 100",
@@ -521,3 +523,4 @@ export const VisaIcon = createIcon({
     </svg>
   ),
 });
+
